@@ -1,0 +1,32 @@
+.loader-container{
+    position: fixed;
+    inset: 0;
+    background: var(--color-white);
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+}
+
+.loader{
+    display: grid;
+    place-items: center;
+}
+
+.loader img{
+    animation: spin 1s infinite;
+}
+
+.loader-container.fade-out{
+    top:-110%;
+    opacity:0;
+    z-index: -1;
+}
+
+@keyframes spin {
+    0%{
+        rotate: 0deg;  
+    }
+    100%{
+        rotate: -360deg;  
+    }
+}

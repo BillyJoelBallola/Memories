@@ -1,0 +1,118 @@
+::-webkit-scrollbar{
+    border-radius: 100vw;
+    background: var(--color-light-gray);
+    width: .4em;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 100vw;
+    background: var(--color-dark-gray);
+    width: .3em;
+    height: .5em;
+}
+
+.view-bg{
+    height: 100vh;
+    width: 100vw;
+    padding-block: 4rem;
+}
+
+.view-container{
+    width: 50%;
+    margin-inline: auto;
+}
+
+.view-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.view-control div:nth-child(1){
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.view-control div:nth-child(1) h1{
+    font-size: 1.5rem;
+}
+
+.view-control a i{
+    color: var(--color-black);
+}
+
+.view-content{
+    box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.15);
+    background: var(--color-white);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    height: 70vh;
+}
+
+.view-content .view-text{
+    overflow-y: scroll;
+    padding-inline: 1rem;
+    height: 100%;
+    gap: .5rem;
+}
+
+.view-content .view-text img{
+    object-fit: cover;
+    float: left;
+    margin-top: .6rem;
+    margin-right: .5rem;
+    width: 60%;
+    border-radius: var(--border-10);
+}
+
+
+.view-content .view-text p{
+    text-align: justify;
+}
+
+@media (max-width: 64em){
+    .view-container{
+        width: 80%;
+    }
+}
+
+@media (max-width: 32em){
+    .view-bg{
+        height: 100vh;
+        width: 100vw;
+        padding-block: 1rem;
+    }
+
+    .view-control{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .view-control div:nth-child(1) h1{
+        font-size: 1.2rem;
+    }
+
+    .view-control div:nth-child(2){
+        font-size: .8rem;
+        margin-left: 2rem;
+    }
+    
+    .view-container{
+        width: 90%;
+    }
+
+    .view-content{
+        padding: 1rem;
+        height: 80vh;
+    }
+
+    .view-content .view-text{
+        padding-inline: .4rem;
+    }
+    
+    .view-content .view-text img{
+        width: 100%;
+    }
+}

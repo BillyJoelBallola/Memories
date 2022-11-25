@@ -1,0 +1,106 @@
+.myAccount-container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.myAccount-content{
+    padding-block: 7rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.myAccount-other-control,
+.myAccount-header,
+.myAccount{
+    width: 40%;
+}
+
+.myAccount-header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.myAccount-header h1{
+    font-size: 1.5rem;
+}
+
+.myAccount-header a{
+    color: var(--color-black);
+}
+
+.myAccount{
+    padding: 2rem 4rem;
+    border-radius: var(--border-10);
+    background: var(--color-green);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.myAccount div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.myAccount div .text{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.myAccount div .text span{
+    font-size: .9rem;
+}
+
+.myAccount div .text p{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.myAccount-other-control{
+    background: var(--color-green);
+    border-radius: var(--border-10);
+    padding: .5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 64em) {
+    .myAccount-other-control,
+    .myAccount-header,
+    .myAccount{
+        width: 80%;
+    }
+
+    .myAccount{
+        padding-inline: 2rem;
+    }
+
+}
+
+@media (max-width: 64em) {
+    .myAccount-other-control,
+    .myAccount-header,
+    .myAccount{
+        width: 90%;
+    }
+
+    .myAccount-content{
+        padding-block: 2rem;
+    }
+
+    .myAccount-other-control,
+    .myAccount{
+        padding-inline: 1rem;
+    }
+
+    .myAccount div .text p{
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,112 @@
+nav{
+    width: 100vw;
+    height: 6rem;
+    display: grid;
+    place-items: center;
+    top: 0;
+}
+
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo img{
+    width: 80%;
+    object-fit: cover;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links li a{
+    color: var(--color-black);
+    transition: var(--transition);
+}
+
+.nav-links li a:hover{
+    color: var(--color-dark-green);
+}
+
+.nav-links > div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .3rem .3rem .3rem 1.3rem;
+    border-radius: calc(var(--border-10) + .5rem);
+    background: var(--color-green);
+}
+
+.nav-links > div a:nth-child(1){
+    color: var(--color-darker-green);
+}
+
+.nav-links > div a:nth-child(2){
+    color: var(--color-darker-green);
+    background: var(--color-dark-green);
+    border-radius: calc(var(--border-10) + .5rem);
+    padding: .5rem 1rem;
+    transition: var(--transition);
+}
+
+.nav-links > div a:nth-child(2):hover{
+    background: var(--color-green-hover);
+}
+
+.username,
+.nav-links-mb{
+    display: none;
+}
+
+@media (max-width: 64em){
+
+    .nav-links{
+        display: none;
+    }
+
+    .username{
+        display: block;
+        padding: .5rem 1rem;
+        border-radius: calc(var(--border-10) + .5rem);
+        background: var(--color-green);
+    }
+    .username a{
+        color: var(--color-darker-green);
+    }
+
+    .nav-links-mb{
+        box-shadow: var(--shadow);
+        position: fixed;
+        left: 50%;
+        bottom: 1rem;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 1rem;
+        z-index: 9999;
+        padding: 1rem 2rem; 
+        border-radius: 100vw;
+    }
+    
+    .nav-links-mb a{
+        cursor: pointer;
+        background: var(--color-darker-green);
+        color: var(--color-green);
+        display: grid;
+        place-items: center;
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        border-radius: 100vw;
+    }
+
+    .nav-links-mb a:hover{
+        box-shadow: var(--shadow-hover);
+    }
+    
+    .nav-links-mb a i{
+        font-size: 1rem;
+    }
+}

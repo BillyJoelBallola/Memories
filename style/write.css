@@ -1,0 +1,100 @@
+.write-content{
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 1rem;
+}
+
+.form-container{
+    height: max-content;
+    background: var(--color-light-green);
+    border-radius: var(--border-10);
+    padding: 1rem;
+}
+
+.form-container form > div{
+    width: 100%;
+    height: .05rem;
+    background: var(--color-black);
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form-container form textarea,
+.form-container form input{
+    background: transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-container form input{
+    font-weight: 700;
+}
+
+.form-container form textarea{
+    resize: none;
+}
+
+.control-container{
+    border: 1px solid var(--color-black);
+    border-radius: var(--border-10);
+    padding: 1rem;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.control-container h4{
+   margin-bottom: 1rem;
+}
+
+.control-container .clr-theme{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.clr-theme .clr-bg-color{
+    display: grid;
+    place-items: center;
+    padding: .5rem;
+    border-radius: var(--border-10);
+}
+
+.clr-theme .clr-bg-color input{
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+}
+
+@media (max-width: 64em){
+    .write-content{ 
+        grid-template-columns: 60% 40%;
+        gap: 1rem;
+    }
+
+    .control-container{
+        gap: 1rem;
+    }
+}
+@media (max-width: 32em){
+    .write-content{
+        height: 100%;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* EDIT */
+
+.edit-image{
+    width: 50%;
+}

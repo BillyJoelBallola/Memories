@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita:wght@400;700&display=swap');
+@import url('auth.css');
+@import url('navbar.css');
+@import url('home.css');
+@import url('footer.css');
+@import url('loader.css');
+@import url('write.css');
+@import url('myMemories.css');
+@import url('viewMemory.css');
+@import url('myAccount.css');
+@import url('msgBox.css');
+@import url('editAccount.css');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --color-white: #fff;
+    --color-black: #000;
+
+    --color-light-green: #cefad2;
+    --color-green: #7afb87;
+    --color-green-hover: #B6FFBD;
+    --color-dark-green: #50b132b7;
+    --color-darker-green: #0d2904;
+    --color-light-gray: #f2f2f2;
+    --color-dark-gray: #d3d3d3;
+
+    --color-red: #ff3333;
+
+    --shadow-hover: 0px 7px 28px -4px rgba(104, 95, 95, 0.5);
+
+    --shadow: 0px 4px 28px -4px rgba(0, 0, 0, 0.25);
+    --border-10: .5rem;
+    
+    --container-lg: 75%;
+    --container-md: 86%;
+    --container-sm: 90%;
+
+    --border-10: .5rem;
+    --transition: all 200ms ease-in-out;
+
+    --ff-heading: 'Sansita', sans-serif;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.btn{
+    color: var(--color-black);
+    border-radius: var(--border-10);
+    cursor: pointer;
+    display: inline-block;
+    padding: .5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--color-black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: .9rem;
+    transition: var(--transition);
+}
+
+.btn:hover{
+    background: var(--color-darker-green);
+    color: var(--color-white);
+    box-sizing: var(--shadow-hover);
+}
+
+.bg-green{
+    background: var(--color-green);
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--ff-heading);
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+main{
+    width: 100vw;
+}
+
+.blur-bg{
+    background: #50b132b7;
+    backdrop-filter: blur(8px);
+}
+
+.container{
+    width: var(--container-lg);
+    margin-inline: auto;
+}
+
+@media (max-width: 64em){
+    .container{
+        width: var(--container-md);
+    }
+}
+@media (max-width: 32em){
+    .container{
+        width: var(--container-sm);
+    }
+}

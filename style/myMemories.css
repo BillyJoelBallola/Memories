@@ -1,0 +1,64 @@
+.myMemories-container{
+    height: 100%;
+    padding-block: 2rem;
+    display: grid;
+    place-items: center;
+}
+
+.myMemories-wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.myMemories-wrapper a{
+    color: var(--color-black);
+}
+
+.memory-container{
+    width: 20em;
+    padding: 1rem;
+    border-radius: var(--border-10);
+}
+
+.memory-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.memory-control{
+    display: flex;
+    gap: .2rem;
+}
+
+.memory-control a{
+    display: grid;
+    place-items: center;
+}
+
+.memory-control .delete, 
+.memory-control .edit{
+    cursor: pointer;
+    padding: .3rem;
+    border-radius: 100vw;
+    transition: var(--transition);
+}
+
+.memory-control .delete:hover, 
+.memory-control .edit:hover{
+    background-color: var(--color-light-gray);
+}
+
+.memory-content p{
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+@media (max-width: 32em){
+    .myMemories-wrapper{
+        justify-content: center;
+    }    
+}
