@@ -3,6 +3,10 @@
     if(!isset($_SESSION)){
         session_start();
     }
+
+    if(!isset($_SESSION['userLogin'])){
+        header('Location: login.php');
+    }
     
     require('dbConnect.php');
     $conn = connection();
@@ -28,7 +32,6 @@
     <link rel="stylesheet" href="style/general.css">
     
     <script defer src="https://kit.fontawesome.com/32dee845d7.js" crossorigin="anonymous"></script>
-    <!-- <script defer src="javascript/theme.js"></script> -->
     <script defer src="javascript/msgBox.js"></script>
     
     <title>Memories | My Memories</title>

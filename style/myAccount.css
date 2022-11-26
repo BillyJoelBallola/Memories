@@ -1,10 +1,10 @@
-.myAccount-container{
+.myAccount-container {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
 
-.myAccount-content{
+.myAccount-content {
     padding-block: 7rem;
     display: flex;
     align-items: center;
@@ -14,25 +14,25 @@
 
 .myAccount-other-control,
 .myAccount-header,
-.myAccount{
+.myAccount {
     width: 40%;
 }
 
-.myAccount-header{
+.myAccount-header {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.myAccount-header h1{
+.myAccount-header h1 {
     font-size: 1.5rem;
 }
 
-.myAccount-header a{
+.myAccount-header a {
     color: var(--color-black);
 }
 
-.myAccount{
+.myAccount {
     padding: 2rem 4rem;
     border-radius: var(--border-10);
     background: var(--color-green);
@@ -41,66 +41,78 @@
     gap: 1.5rem;
 }
 
-.myAccount div{
+.myAccount div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.myAccount div .text{
+.myAccount div .text {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
 }
 
-.myAccount div .text span{
+.myAccount div .text span {
     font-size: .9rem;
 }
 
-.myAccount div .text p{
+.myAccount div .text p {
     font-size: 1.1rem;
     font-weight: 600;
 }
 
-.myAccount-other-control{
+.myAccount-other-control {
+    text-align: center;
     background: var(--color-green);
     border-radius: var(--border-10);
-    padding: .5rem 2rem;
+    padding: .5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 @media (max-width: 64em) {
+
     .myAccount-other-control,
     .myAccount-header,
-    .myAccount{
+    .myAccount {
         width: 80%;
     }
 
-    .myAccount{
+    .myAccount {
         padding-inline: 2rem;
     }
 
 }
 
 @media (max-width: 64em) {
+
     .myAccount-other-control,
     .myAccount-header,
-    .myAccount{
+    .myAccount {
         width: 90%;
     }
 
-    .myAccount-content{
+    .myAccount-content {
         padding-block: 2rem;
     }
 
     .myAccount-other-control,
-    .myAccount{
+    .myAccount {
         padding-inline: 1rem;
     }
 
-    .myAccount div .text p{
+    .myAccount div .text p {
         font-size: 1rem;
+    }
+
+    .myAccount-other-control {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .myAccount-other-control a {
+        width: 100%;
     }
 }

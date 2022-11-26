@@ -3,6 +3,10 @@
     if(!isset($_SESSION)){
         session_start();
     }
+    
+    if(!isset($_SESSION['userLogin'])){
+        header('Location: login.php');
+    }
 
     $theme_clr = array('#CEFAD2','#FFD0D0', '#D7ECFF', '#FFFDD3', '#FFE7D9', '#F0E1FF');
 

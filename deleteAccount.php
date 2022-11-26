@@ -85,7 +85,7 @@
     <div class="myAccount-container">
         <div class="myAccount-content">
             <div class="myAccount-header">
-                <h1>Deleting Account</h1>
+                <h1>Delete Account</h1>
             </div>
             <div class="myAccount">
                 <form class="editAccount-form" id="editAccount-form" method="POST">
@@ -103,9 +103,9 @@
                         <textarea name="otherReason" id="" cols="30" rows="5"></textarea>
                     </div>
                 </form>
-                <small>All the saved work and information will be deleted permanently</small>
+                <small>Are you sure you want to continue? After you submit this form, all the memories saved in your account will be permanently deleted.</small>
                 <div class="deleteAccount-control">
-                    <input class="btn" type="submit" name="delete" form="editAccount-form" value="Delete Account">
+                    <input class="btn" type="submit" name="delete" form="editAccount-form" value="Submit">
                     <a href="myAccount.php" class="btn" name="save">Cancel</a>
                 </div>
             </div>

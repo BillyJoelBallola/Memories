@@ -76,7 +76,7 @@ body{
 .btn:hover{
     background: var(--color-darker-green);
     color: var(--color-white);
-    box-sizing: var(--shadow-hover);
+    box-shadow: var(--shadow-hover);
 }
 
 .bg-green{

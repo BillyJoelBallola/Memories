@@ -18,11 +18,15 @@
     font-family: 'Lato', sans-serif;
     resize: none;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border-radius: var(--border-10);
     border: 1px solid var(--color-black);
     background: transparent;
     padding: .5rem 1rem;    
+}
+
+.editAccount-form div label{
+    font-size: .9rem;
 }
 
 .editAccount-form div input[type="submit"]{

@@ -4,11 +4,11 @@
         session_start();
     }
 
-    if(!isset($_SESSION['userLogin'])){
-        header("Location: login.php");
-    }
+    // if(!isset($_SESSION['userLogin'])){
+    //     header("Location: login.php");
+    // }
 
-    $username = $_SESSION['userLogin'];
+    $username = $_SESSION['userLogin'] ?? null;
 
 ?>
 
@@ -60,8 +60,12 @@
                     </div>
                     <div class="write-home-text">
                         <h2>Start Writing Now!</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dignissimos voluptate animi at eaque amet dolore labore aspernatur rerum saepe ad quasi fugiat nobis est voluptas, molestiae distinctio corporis neque perspiciatis totam, porro necessitatibus nisi. Quod, delectus nam. Voluptatibus voluptates quos commodi ab animi nihil inventore illum sit perspiciatis minima!</p>
-                        <a href="write.php" class="btn">Start now</a>
+                            <p>Do you have any stories or memories you'd like to keep? Memories can help you. If you want to be able to look back and remember your stories in the future, just click the button below and begin writing it now!</p>
+                        <?php if($username) {?>
+                            <a href="write.php" class="btn">Start now</a>
+                        <?php }else {?>
+                            <a href="login.php" class="btn">Start now</a>
+                        <?php }?>
                     </div>
                 </div>
             </div>

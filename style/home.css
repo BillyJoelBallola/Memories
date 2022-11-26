@@ -39,7 +39,10 @@
     margin-top: 2rem;
     width: max-content;
 }
+
 .about-home-img{
+    border-radius: 100%;
+    background-image: linear-gradient(var(--color-dark-green), var(--color-green));
     display: grid;
     place-items: center;
 }

@@ -36,10 +36,10 @@
             $_SESSION['editPassword'] = '<div class="msgBox">
                                             <div>
                                                 <i class="fa-solid fa-circle-exclamation error"></i>
-                                                <p>Current password did not match</p>
+                                                <p>Current password is incorrect</p>
                                             </div>
                                             <span class="msgBox-close">&times;</span>
-                                        </div>';
+                                        </div>';    
         }elseif($confirmPassword != $newPassword){
             $_SESSION['editPassword'] = '<div class="msgBox">
                                             <div>
@@ -71,7 +71,7 @@
 
     $currentPassword = $_SESSION['editPassword-data']['currentPassword'] ?? null;
     $newPassword = $_SESSION['editPassword-data']['newPassword'] ?? null;
-    $confirmPassword = $_SESSION['editPassword-data']['confirm$confirmPassword'] ?? null;
+    $confirmPassword = $_SESSION['editPassword-data']['confirmPassword'] ?? null;
 
     unset($_SESSION['editPassword-data']);
 
