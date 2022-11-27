@@ -28,7 +28,7 @@
             $_SESSION['editPassword'] = '<div class="msgBox">
                                             <div>
                                                 <i class="fa-solid fa-circle-exclamation error"></i>
-                                                <p>Complete the form</p>
+                                                <p>Fill up all fields</p>
                                             </div>
                                             <span class="msgBox-close">&times;</span>
                                         </div>';

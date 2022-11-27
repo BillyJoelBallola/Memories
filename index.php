@@ -43,7 +43,7 @@
                 <div class="about-home-content">
                     <div class="about-home-text">
                         <h2>About</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dignissimos voluptate animi at eaque amet dolore labore aspernatur rerum saepe ad quasi fugiat nobis est voluptas, molestiae distinctio corporis neque perspiciatis totam, porro necessitatibus nisi. Quod, delectus nam. Voluptatibus voluptates quos commodi ab animi nihil inventore illum sit perspiciatis minima!</p>
+                        <p>Memories is a safe place online where you can capture your most cherished memories and save them for generations to come. Memories saves and organizes your precious photos and journals and it keeps the memories alive long after the moment has passed. With Memories, you can be sure your story will never be forgotten.</p>
                         <a href="#" class="btn">learn more</a>
                     </div>
                     <div class="about-home-img">
@@ -87,7 +87,7 @@
                         <div class="contact-home-text pos-low">
                             <ul class="contact-social-media">
                                 <li><a href="#"><i class="fa-brands fa-facebook-messenger"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
                             </ul>

@@ -19,7 +19,7 @@
 
     if(isset($_POST['delete'])){
         $reason = $_POST['reason'];
-        $otherReason = $_POST['otherReason'] ? $_POST['otherReason'] : 'N/A';
+        $otherReason =  $_POST['otherReason'];
 
         if(empty($reason)){
             $_SESSION['deleteAccount'] = '<div class="msgBox">
@@ -28,14 +28,30 @@
                                                 <p>Reason cannot be empty</p>
                                             </div>
                                             <span class="msgBox-close">&times;</span>
-                                        </div>';
+                                        </div>';   
+        }elseif($reason == "other"){
+            if(empty($otherReason)){
+                $_SESSION['deleteAccount'] = '<div class="msgBox">
+                                                    <div>
+                                                        <i class="fa-solid fa-circle-exclamation error"></i>
+                                                        <p>Please include your reason</p>
+                                                    </div>
+                                                    <span class="msgBox-close">&times;</span>
+                                                </div>';
+            }else{
+                $otherReason = $_POST['otherReason'];
+            }
+
+        }else{
+            $otherReason = $_POST['otherReason'];
         }
 
         if(isset($_SESSION['deleteAccount'])){
-            $_SESSION['deleteAccount-data'] = $_POST;
+            header('Location: deleteAccount.php');
+            die();
         }else{
-            $userEmailAddress = $row['email'];
-
+            $userEmailAddress = $row['email'];   
+            
             $insertReason_query = "INSERT INTO `reasons` (`emailAddress`, `reason`, `otherReason`) VALUES ('$userEmailAddress', '$reason', '$otherReason')";
             $conn->query($insertReason_query) or die ($conn->error);
 
@@ -49,15 +65,9 @@
                                             </div>
                                             <span class="msgBox-close">&times;</span>
                                         </div>';
-            include('logout.php');                                    
+            include('logout.php');                             
         }
     }
-
-    // $currentPassword = $_SESSION['deleteAccount-data']['currentPassword'] ?? null;
-    // $newPassword = $_SESSION['deleteAccount-data']['newPassword'] ?? null;
-    // $confirmPassword = $_SESSION['deleteAccount-data']['confirm$confirmPassword'] ?? null;
-
-    // unset($_SESSION['deleteAccount-data']);
 
 ?>
 
@@ -96,6 +106,7 @@
                             <option value="I dont have to time to write memory">I don't have to time to write memory</option>
                             <option value="I dont want to remember the past">I don't want to remember the past</option>
                             <option value="I dont like using it">I dont't like using it</option>
+                            <option value="other">Other reason</option>
                         </select>
                     </div>
                     <div>
