@@ -1,8 +1,9 @@
 ::-webkit-scrollbar{
     border-radius: 100vw;
-    background: var(--color-light-gray);
+    background: transparent;
     width: .4em;
 }
+
 ::-webkit-scrollbar-thumb{
     border-radius: 100vw;
     background: var(--color-dark-gray);
@@ -13,7 +14,6 @@
 .view-bg{
     height: 100vh;
     width: 100vw;
-    padding-block: 4rem;
 }
 
 .view-container{

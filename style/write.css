@@ -51,9 +51,9 @@
     flex-direction: column;
     gap: 2rem;
 }
-.control-container h4{
+/* .control-container h4{
    margin-bottom: 1rem;
-}
+} */
 
 .control-container .clr-theme{
     display: flex;
@@ -97,4 +97,22 @@
 
 .edit-image{
     width: 50%;
+}
+
+.edit-control{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.remove-btn{
+    color: var(--color-darker-green);
+    width: max-content;
+    cursor: pointer;
+    background: transparent;
+    transition: var(--transition);
+}
+.remove-btn:hover{
+    text-decoration: underline;
 }

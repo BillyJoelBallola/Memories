@@ -31,28 +31,28 @@
 </head>
 <body>
     <div class="view-bg" style="background:<?= $row['colorTheme']?>">
-        <div class="view-container">
-            <div class="view-control">
-                <div>
-                    <a href="myMemories.php">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </a>
-                    <h1><?= $row['title'] ?></h1>
+        <div class="symbol-bg">
+            <div class="view-container">
+                <div class="view-control">
+                    <div>
+                        <a href="myMemories.php">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <h1><?= $row['title'] ?></h1>
+                    </div>
+                    <div>
+                        <?= $row['datetime'] ?>
+                    </div>
                 </div>
-                <div>
-                    <?= $row['datetime'] ?>
-                </div>
-            </div>
-            <div class="view-content">
-                <div class="view-text">
-                    <?php if($row['image']){ ?> 
-                        <div>
-                            <img src="uploads/<?= $row['image'] ?>" alt="memory-image">
-                        </div>
-                    <?php } else {?>
-                        <div></div>
-                    <?php }?>
-                    <p class="text"><?= nl2br($row['content']) ?></p>
+                <div class="view-content">
+                    <div class="view-text">
+                        <?php if($row['image']){ ?>
+                            <div>
+                                <img src="uploads/<?= $row['image'] ?>" alt="memory-image">
+                            </div>
+                        <?php } ?>
+                        <p class="text"><?= nl2br($row['content']) ?></p>
+                    </div>
                 </div>
             </div>
         </div>

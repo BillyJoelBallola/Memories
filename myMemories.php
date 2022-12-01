@@ -11,7 +11,7 @@
     require('dbConnect.php');
     $conn = connection();
 
-    $getAllMemory_query = "SELECT m.id, u.username, m.title, m.content, m.colorTheme, m.image, m.datetime FROM users u JOIN memory m ON u.id=m.uid WHERE m.uid =". $_SESSION['userId'] ."";
+    $getAllMemory_query = "SELECT m.id, u.username, m.title, m.content, m.colorTheme, m.image, m.datetime FROM users u JOIN memory m ON u.id=m.uid WHERE m.uid =". $_SESSION['userId'] ." ORDER BY id DESC";
     $data = $conn->query($getAllMemory_query) or die ($conn->error);
     $row = $data->fetch_assoc();
     $result = $data->num_rows;

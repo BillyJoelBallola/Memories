@@ -56,7 +56,7 @@
             $updateUsernameById_query = "UPDATE users SET `password` = '$newPassword' WHERE `id` = '$userId'";
             $data = $conn->query($updateUsernameById_query) or die ($conn->error);
 
-            $msg = 'Click back button to redirect to login page, and start re-logging';
+            $msg = 'Click back button to redirect to login page.';
             $_SESSION['editPassword'] = '<div class="msgBox">
                                             <div>
                                                 <i class="fa-solid fa-circle-exclamation success"></i>

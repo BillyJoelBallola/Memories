@@ -37,27 +37,29 @@
         ?>
     <?php endif ?>
     <div class="auth-container">
-        <div class="main-auth-container">
-            <div class="auth-form-container">
-                <div class="auth-img-container">
-                    <img src="assets/login-img.png" alt="loging in">
+        <div class="symbol-bg">
+            <div class="main-auth-container">
+                <div class="auth-form-container">
+                    <div class="auth-img-container">
+                        <img src="assets/login-img.png" alt="loging in">
+                    </div>
+                    <form action="login-logic.php" method="POST">
+                        <div>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" value="<?= $email ?>">
+                        </div>
+                        <div>
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" value="<?= $password ?>">
+                        </div>
+                        <div>
+                            <input type="submit" name="signin" class="btn" value="Login">
+                        </div>
+                        <div>
+                            <small>Don't have an account yet? <a href="register.php">Register now</a></small>
+                        </div>
+                    </form>
                 </div>
-                <form action="login-logic.php" method="POST">
-                    <div>
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" value="<?= $email ?>">
-                    </div>
-                    <div>
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" value="<?= $password ?>">
-                    </div>
-                    <div>
-                        <input type="submit" name="signin" class="btn" value="Login">
-                    </div>
-                    <div>
-                        <small>Don't have an account yet? <a href="register.php">Register now</a></small>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

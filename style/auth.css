@@ -2,6 +2,17 @@
 	height: 100vh;
 	width: 100vw;
 	background: var(--color-green);
+}
+
+.symbol-bg{
+	background-image: url('../assets/bg-icon.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	height: 100%;
+	width: 100%;
+	
 	display: grid;
 	place-items: center;
 }

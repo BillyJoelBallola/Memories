@@ -35,7 +35,7 @@
         ?>
     <?php endif ?>
     <div class="auth-container">
-        <div>
+        <div class="symbol-bg">
             <div class="auth-form-container register-container">
                 <form action="register-logic.php" method="POST" class="register-form">
                     <div>

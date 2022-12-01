@@ -8,7 +8,7 @@
         header('Location: login.php');
     }
 
-    $theme_clr = array('#CEFAD2','#FFD0D0', '#D7ECFF', '#FFFDD3', '#FFE7D9', '#F0E1FF');
+    $theme_clr = array('#CEFAD2','#FFD0D0', '#D7ECFF', '#FFFDD3', '#FFE7D9', '#F0E1FF', '#D6E4E5', '#8D9EFF', '#CDFCF6', '#E1CEB5', '#9ED5C5', '#5F9DF7', '#FFA1CF', '#C8DBBE', '#7FBCD2');
 
     $title = $_SESSION['write-data']['title'] ?? null;
     $content = $_SESSION['write-data']['content'] ?? null;
@@ -54,10 +54,10 @@
                     <h4>Theme</h4>
                     <div class="clr-theme">
                         <?php foreach($theme_clr  as $clr){ ?>
-                            <div class="clr-bg-color" style="background:<?php echo $clr?>">
+                            <div class="clr-bg-color" style="background:<?= $clr?>">
                                 <input
-                                    style="background:<?php echo $clr?>"
-                                    value="<?php echo $clr?>"
+                                    style="background:<?= $clr?>"
+                                    value="<?= $clr?>"
                                     type="radio"
                                     id="clr-btn"
                                     name="clr"
