@@ -72,6 +72,10 @@
     justify-content: space-between;
 }
 
+.myAccount small{
+    line-height: 1.2;
+}
+
 @media (max-width: 64em) {
 
     .myAccount-other-control,

@@ -28,13 +28,20 @@
     justify-content: space-between;
     margin-bottom: .5rem;
 }
+.memory-header h3{
+    line-height: 1;
+}
 
 .memory-control{
     display: flex;
     gap: .2rem;
+    background: #00000033;
+    border-radius: 100vw;
+    padding: .2rem .5rem;
 }
 
 .memory-control a{
+    color: var(--color-black);
     display: grid;
     place-items: center;
 }
@@ -49,7 +56,7 @@
 
 .memory-control .delete:hover, 
 .memory-control .edit:hover{
-    background-color: var(--color-light-gray);
+    background: var(--color-dark-gray);
 }
 
 .memory-content p{

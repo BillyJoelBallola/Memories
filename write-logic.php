@@ -14,12 +14,11 @@
         $content = filter_var($_POST['content'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $clr = $_POST['clr'];
 
-        $img_name = $_FILES['memory_img']['name'];
-        $img_size = $_FILES['memory_img']['size'];
-        $tmp_name = $_FILES['memory_img']['tmp_name'];
-        $error = $_FILES['memory_img']['error'];
-
-        $new_img_name = '';
+        if($_FILES['memory_img']['size'] != 0){
+            $memory_img = $_FILES['memory_img'];
+        }elseif($_FILES['memory_img-mb']['size'] != 0){
+            $memory_img = $_FILES['memory_img-mb'];
+        }
 
         if(empty($title)){
             $_SESSION['write'] = '<div class="msgBox">
@@ -37,8 +36,16 @@
                                         </div>
                                         <span class="msgBox-close">&times;</span>
                                     </div>';
-        }elseif($error === 0){
-            if($img_size > 1000000){
+        }
+        
+        if($memory_img){
+
+            $img_name = $memory_img['name'];
+            $img_size = $memory_img['size'];
+            $tmp_name = $memory_img['tmp_name'];
+            $error = $memory_img['error'];
+
+            if($img_size > 10000000){
                 $_SESSION['write'] = '<div class="msgBox">
                                         <div>
                                             <i class="fa-solid fa-circle-exclamation error"></i>

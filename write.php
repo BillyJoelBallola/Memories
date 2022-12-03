@@ -30,6 +30,7 @@
     <script defer src="https://kit.fontawesome.com/32dee845d7.js" crossorigin="anonymous"></script>
     <script defer src="javascript/theme.js"></script>
     <script defer src="javascript/msgBox.js"></script>
+    <script defer src="javascript/controls.js"></script>
 
     <title>Memories | Write</title>
 </head>
@@ -74,7 +75,40 @@
                 </div>
                     <input type="submit" class="btn save-btn" name="save" value="save" form="memory-form">
                 </div>
-            </div>    
+            </div>   
+            <!-- mobile view -->
+            <div class="control-mb">
+                <div class="flex">
+                    <button class="control-btn ctrl">Controls</button>
+                    <input type="submit" class="ctrl" name="save" value="Save" form="memory-form">
+                </div>
+                <div class="control-container-mb">
+                    <div>
+                        <h4>Theme</h4>
+                        <div class="clr-theme">
+                            <?php foreach($theme_clr  as $clr){ ?>
+                                <div class="clr-bg-color" style="background:<?= $clr?>">
+                                    <input
+                                        style="background:<?= $clr?>"
+                                        value="<?= $clr?>"
+                                        type="radio"
+                                        id="clr-btn_mb"
+                                        name="clr"
+                                        form="memory-form">
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Image</h4>
+                        <div>
+                            <input type="file" name="memory_img-mb" form="memory-form">
+                        </div>
+                    </div>
+                        <!-- <input type="submit" class="btn save-btn" name="save" value="save" form="memory-form"> -->
+                    </div>
+                </div>
+            </div>
         </div>
     <?php include('components/footer.php') ?>
 </body>

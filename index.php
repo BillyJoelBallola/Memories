@@ -4,10 +4,6 @@
         session_start();
     }
 
-    // if(!isset($_SESSION['userLogin'])){
-    //     header("Location: login.php");
-    // }
-
     $username = $_SESSION['userLogin'] ?? null;
 
 ?>

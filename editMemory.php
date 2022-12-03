@@ -26,15 +26,24 @@
     if(isset($_POST['update'])){
         $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
         $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
-        $currentImg = $_POST['current_memory_img']; 
+        $curImg = $_POST['current_memory_img'] ?? null;
+        $curImg_md = $_POST['current_memory_img-mb'] ?? null;
         $clr = $_POST['clr'];
 
-        $newImage = $_FILES['memory_img'];
+        if($curImg){
+            $currentImg = $curImg;
+        }elseif($curImg_md){
+            $currentImg = $curImg_md;
+        }else{
+            $currentImg = null;
+        }
 
-        $img_name = $newImage['name'];
-        $img_size = $newImage['size'];
-        $tmp_name = $newImage['tmp_name'];
-        $error = $newImage['error'];
+        if($_FILES['memory_img']['size'] != 0){
+            $newImage = $_FILES['memory_img'];
+        }elseif($_FILES['memory_img-mb']['size'] != 0){
+            $newImage = $_FILES['memory_img-mb'];
+        }
+
 
         if(empty($title)){
             $_SESSION['editMemory'] = '<div class="msgBox">
@@ -54,8 +63,13 @@
                                     </div>';
         }
         
-        if($img_name){
-            if($img_size > 1000000){
+        if($newImage){
+            $img_name = $newImage['name'];
+            $img_size = $newImage['size'];
+            $tmp_name = $newImage['tmp_name'];
+            $error = $newImage['error'];
+
+            if($img_size > 10000000){
                 $_SESSION['editMemory'] = '<div class="msgBox">
                                         <div>
                                             <i class="fa-solid fa-circle-exclamation error"></i>
@@ -70,15 +84,13 @@
                 $allow_exs = array("jpg", "jpeg", "png");
 
                 if(in_array($img_ex_lc, $allow_exs)){
-
-                    if($currentImg){
-                        unlink("./uploads/".$currentImg); 
-                    }
-
                     $new_img_name = uniqid("Memories-", true).'.'.$img_ex_lc;
                     $img_upload_path = 'uploads/'.$new_img_name;
                     move_uploaded_file($tmp_name, $img_upload_path);
 
+                    if($currentImg){
+                        unlink("./uploads/".$currentImg); 
+                    }
                     
                 }else{
                     $_SESSION['editMemory'] = '<div class="msgBox">
@@ -127,6 +139,7 @@
     <script defer src="https://kit.fontawesome.com/32dee845d7.js" crossorigin="anonymous"></script>
     <script defer src="javascript/theme.js"></script>
     <script defer src="javascript/msgBox.js"></script>
+    <script defer src="javascript/controls.js"></script>
 
     <title>Memories | Edit</title>
 </head>
@@ -150,10 +163,10 @@
                 <h4>Theme</h4>
                 <div class="clr-theme">
                     <?php foreach($theme_clr  as $clr){ ?>
-                        <div class="clr-bg-color" style="background:<?php echo $clr?>">
+                        <div class="clr-bg-color" style="background:<?= $clr?>">
                             <input
-                                style="background:<?php echo $clr?>"
-                                value="<?php echo $clr?>"
+                                style="background:<?= $clr?>"
+                                value="<?= $clr?>"
                                 type="radio"
                                 id="clr-btn"
                                 name="clr"
@@ -178,9 +191,50 @@
                 </div>
             </div>
             <input type="submit" class="btn" name="update" value="Update" form="memory-form">
-        </div>      
+        </div>
+
+        <!-- mobile view -->
+        <div class="control-mb">
+            <div class="flex">
+                <button class="control-btn ctrl">Controls</button>
+                <input type="submit" class="ctrl" name="update" value="Update" form="memory-form">
+            </div>
+            <div class="control-container-mb">
+                <div>
+                    <h4>Theme</h4>
+                    <div class="clr-theme">
+                        <?php foreach($theme_clr  as $clr){ ?>
+                            <div class="clr-bg-color" style="background:<?= $clr?>">
+                                <input
+                                    style="background:<?= $clr?>"
+                                    value="<?= $clr?>"
+                                    type="radio"
+                                    id="clr-btn_mb"
+                                    name="clr"
+                                    form="memory-form">
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+                <div>
+                    <div class="edit-control">
+                        <h4>Image</h4>
+                        <?php if($row['image']) {?>
+                            <input type="submit" class="remove-btn" name="removeImg" value="Remove Image" form="remove-img">
+                        <?php } ?>
+                    </div>
+                    <div>
+                        <?php if($row['image']) {?>
+                            <img class="edit-image" src="uploads/<?= $row['image'] ?>" alt="memory image">
+                            <input type="hidden" value="<?= $row['image'] ?>" name="current_memory_img-mb" form="memory-form">
+                        <?php } ?>
+                        <input type="file" name="memory_img-mb" form="memory-form">
+                    </div>
+                </div>
+            </div>
+        </div>   
     </div>
-    <form method="POST" id="remove-img"></form>
+    <form method="POST" id="remove-img" enctype="multipart/form-data"></form>
     <?php include('components/footer.php') ?>
 </body>
 </html>

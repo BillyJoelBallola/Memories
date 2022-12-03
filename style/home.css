@@ -164,7 +164,7 @@
 
 @media (max-width: 64em) {
     .hero-container{
-        height: 40vh;
+        height: 40%;
     }
 
     .hero-content img{
@@ -186,11 +186,11 @@
     .contact-home-text-mb{
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .contact-home-img img{
-        width: 100%;
+        width: 80%;
         min-width: 20em;
     }
 
@@ -247,6 +247,10 @@
 
     .write-home-img img{
         width: 80%;
+    }
+
+    .contact-home-img img{
+        width: 100%;
     }
 
     /* contact */

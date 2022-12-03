@@ -35,10 +35,12 @@
 
 .view-control div:nth-child(1) h1{
     font-size: 1.5rem;
+    line-height: 1;
 }
 
 .view-control a i{
     color: var(--color-black);
+    font-size: 1.2rem;
 }
 
 .view-content{
@@ -66,7 +68,6 @@
     border-radius: var(--border-10);
 }
 
-
 .view-content .view-text p{
     text-align: justify;
 }
@@ -92,6 +93,7 @@
 
     .view-control div:nth-child(1) h1{
         font-size: 1.2rem;
+        margin-bottom: .5rem;
     }
 
     .view-control div:nth-child(2){
